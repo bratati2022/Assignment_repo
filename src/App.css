@@ -19,22 +19,15 @@
 
 .nav-ul li a {
   text-decoration: none;
-  color: black;
+  color: rgb(179, 145, 107);
 }
 
-/* .header{
-  position: absolute;
-  margin-top: 20px;
-  text-decoration: bold;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 30px;
-} */
 .Header {
   background-color: #fff;
   min-height: 50px;
   display: flex;
   align-items: center;
-  box-shadow: 0 1px 2px black;
+  box-shadow: 0 1px 2px rgb(179, 145, 107);
   border-radius: 0;
 }
 
@@ -72,7 +65,9 @@
 
 .icon-input:focus {
   box-shadow: none !important;
-  border-color: #333;
+  /* border-color: #333; */
+  border: rgb(179, 145, 107);;
+  
 }
 
 .inputbox {
@@ -80,7 +75,7 @@
   /* margin-left: 400px; */
   margin-top: 20px;
   margin-bottom: 15px;
-  border: 1px solid rgb(73, 5, 5);
+  border: 1px solid rgb(179, 145, 107);
   padding: 12px;
   width: 350px;
 }
@@ -88,7 +83,7 @@
 .reg-button {
   /* margin-left:400px; */
   width: 20%;
-  border: 1px solid rgb(73, 5, 5);
+  border: 1px solid rgb(179, 145, 107);
   padding: 15px;
   cursor: pointer;
 

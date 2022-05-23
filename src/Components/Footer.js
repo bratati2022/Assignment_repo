@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="footer">
       LOOKING TO SELL YOUR CAR?
       <p>
-        <button className="button">SUBMIT YOUR COLLECTOR VEHICLE NOW</button>
+        <button>SUBMIT YOUR COLLECTOR VEHICLE NOW</button>
       </p>
     </footer>
   );
