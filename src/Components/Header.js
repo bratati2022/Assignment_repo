@@ -2,17 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [isAdmin, setisAdmin] = useState("");
-  const user = localStorage.getItem("user");
-  console.log("in header", user);
-
-  useEffect(() => {
-    if (user == "admin@gmail.com") setisAdmin(true);
-    else {
-      setisAdmin(false);
-    }
-  }, [user]);
-
   return (
     <header className="Header shadow mb-4">
       <div className="container">
@@ -49,17 +38,6 @@ const Header = () => {
                 <Link to="/news">News</Link>
               </li>
 
-              {/* <li>
-                <Link to="/submitvehicle">SubmitVehicle</Link>
-              </li> */}
-
-              {isAdmin ? (
-                <li>
-                  <Link to="/submitvehicle">SubmitVehicle</Link>
-                </li>
-              ) : (
-                ""
-              )}
               <li>
                 <Link to="/">SignIn</Link>
               </li>

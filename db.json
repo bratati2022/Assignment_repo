@@ -1,0 +1,39 @@
+{
+  "cardetails": [
+    {
+      "id": "1",
+      "model": "451i",
+      "company": "Maruti",
+      "year": "2022",
+      "auctiontime": "10-2-2022"
+    },
+    {
+      "id": "2",
+      "model": "150B",
+      "company": "BMW",
+      "year": "2020",
+      "auctiontime": "1/8/2018"
+    },
+    {
+      "id": "3",
+      "model": "320i",
+      "company": "BMW",
+      "year": "2018",
+      "auctiontime": "10/7/2015"
+    },
+    {
+      "model": "250i",
+      "company": "BMW",
+      "year": "2020",
+      "auctiontime": "25/5/2025",
+      "id": "hh5-N4b"
+    },
+    {
+      "model": "45",
+      "company": "Tata",
+      "year": "2021",
+      "auctiontime": "2022-05-12",
+      "id": "9RGkw0f"
+    }
+  ]
+}

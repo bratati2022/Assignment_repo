@@ -15,6 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   // const auth = localStorage.getItem("token");
+  // const { userType } = JSON.parse(localStorage.getItem("user"));
   const chk_user = localStorage.getItem("user");
 
   return (
@@ -23,18 +24,14 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" element={<Signin />} />
-
           <Route element={<PrivateRoute />}>
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/news" element={<News />} />
             <Route exact path="/auctions" element={<Auctions />} />
             <Route exact path="/about" element={<About />} />
             <Route exact path="/submitvehicle" element={<SubmitVehicle />} />
-            {/* <Route exact path="/submitvehicle" element={<SubmitVehicle />} /> */}
-            {/* {auth ? (
-              <Route exact path="/collections" element={<Collection />} />
-            ) : (
-              <Route exact path="/" element={<Signin />} />
+            {/* {chk_user == "admin@gmail.com" && (
+              <Route exact path="/submitvehicle" element={<SubmitVehicle />} />
             )} */}
             <Route
               path="*"
@@ -50,7 +47,6 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Footer />
-      //{" "}
       <ToastContainer
         position="top-right"
         autoClose={2000}

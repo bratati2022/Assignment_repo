@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import React from "react";
-import axios from "axios";
+import { POST } from "../Api/api";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -15,24 +15,17 @@ const Signin = () => {
         email: email,
         password: password,
       };
-      let response = await axios.post(
-        "https://car-auction-assignment.herokuapp.com/loginProfile",
-        payload
-      );
+      let response = await POST("loginProfile", payload);
+      console.log(response);
       if (response.status == 200 && response !== null) {
         const token = response.data.token;
-        console.log(token);
         setEmail("");
         setPassword("");
         localStorage.setItem("token", token);
-        console.log(response.data);
-        localStorage.setItem("user", response.data.userDetails.email);
+        localStorage.setItem("user", JSON.stringify(response.data.userDetails));
+        // localStorage.setItem("user", response.data.userDetails.email);
         toast.success("Login Successfully");
-        let recEmail = response.data.userDetails.email;
-        let check = recEmail.slice(0, 5);
-        console.log(check);
-
-        navigate("/submitvehicle");
+        navigate("/collections");
       } else {
         console.log("Signin error");
       }

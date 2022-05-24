@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { POST } from "../Api/api";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -9,8 +9,6 @@ const Signup = () => {
   const [firstname, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [Flag, setFlag] = useState(false);
-  // const[Login,setLogin]=useState(true);
 
   const handleSignUp = async (e) => {
     try {
@@ -20,12 +18,10 @@ const Signup = () => {
         password: password,
       };
 
-      let response = await axios.post(
-        "https://car-auction-assignment.herokuapp.com/registerProfile",
-        payload
-      );
-      if (response.status == 201 && response !== null) {
+      let response = await POST("registerProfile", payload);
+      if (response.status == 201) {
         setEmail("");
+        setPassword("");
         toast.success("Registered Successfully");
         navigate("/");
       } else {
