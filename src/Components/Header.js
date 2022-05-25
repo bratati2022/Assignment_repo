@@ -2,6 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  // const [userType, setUserType] = useState();
+
+  // useEffect(() => {
+  //   if (JSON.parse(localStorage.getItem("user"))) {
+  //     console.log(JSON.parse(localStorage.getItem("user")));
+  //     setUserType(JSON.parse(localStorage.getItem("user")));
+  //   }
+  // }, []);
+
   return (
     <header className="Header shadow mb-4">
       <div className="container">
@@ -27,6 +36,7 @@ const Header = () => {
               <li>
                 <Link to="/about">About</Link>
               </li>
+
               <li>
                 <Link to="/auctions">Auctions</Link>
               </li>
@@ -37,7 +47,9 @@ const Header = () => {
               <li>
                 <Link to="/news">News</Link>
               </li>
-
+              <li>
+                <Link to="/submitvehicle">Submit Vechile</Link>
+              </li>
               <li>
                 <Link to="/">SignIn</Link>
               </li>

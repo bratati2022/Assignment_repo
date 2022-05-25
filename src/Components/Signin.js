@@ -19,15 +19,17 @@ const Signin = () => {
       console.log(response);
       if (response.status == 200 && response !== null) {
         const token = response.data.token;
+        let isAdmin = response.data.userDetails.userType == 0 ? true : false;
         setEmail("");
         setPassword("");
         localStorage.setItem("token", token);
         localStorage.setItem("user", JSON.stringify(response.data.userDetails));
+        localStorage.setItem("isAdmin", JSON.stringify(isAdmin));
         // localStorage.setItem("user", response.data.userDetails.email);
         toast.success("Login Successfully");
         navigate("/collections");
       } else {
-        console.log("Signin error");
+        toast.error(response.data.message);
       }
     } catch (error) {
       console.log(error.message);
@@ -56,7 +58,11 @@ const Signin = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
       <h6>Forgot your password?</h6>
-      <button className="reg-button" onClick={handleSignIn}>
+      <button
+        type="button"
+        className=" reg-button btn-sm"
+        onClick={handleSignIn}
+      >
         SignIn
       </button>
     </section>

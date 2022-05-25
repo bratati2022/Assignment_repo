@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { POST } from "../Api/api";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Button } from "bootstrap";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -58,9 +59,16 @@ const Signup = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button className="reg-button" onClick={handleSignUp}>
+      <button
+        type="button"
+        className=" reg-button btn-sm"
+        onClick={handleSignUp}
+      >
         SignUp
       </button>
+      {/* <Button className="reg-button" onClick={handleSignUp}>
+        SignUp
+      </Button> */}
     </div>
   );
 };

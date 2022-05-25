@@ -16,34 +16,7 @@ const Collection = () => {
 
   return (
     <Container component="main" maxWidth="s">
-      <div className="row">
-        <ul className="auction-list mb-4 pl-5 d-flex align-items-center">
-          <select className="sec">
-            <option value="All Auctions">All Auctions</option>
-          </select>
-          <select name="make" className="sec">
-            <option value="BMW">BMW</option>
-          </select>
-          <li>
-            <a>
-              Make <i className="fa fa-caret-down"></i>
-            </a>
-            <ul className="list-drop-scrolled">
-              <li className="li-input">
-                <input type="text" />
-              </li>
-              <li>
-                <a>BMW</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <p className="reset-filter mb-0">
-              <a> Reset Filters</a>
-            </p>
-          </li>
-        </ul>
-      </div>
+      <div className="row"></div>
       <div className="row">
         {carDetails.map((data) => (
           <div className="col-lg-4 col-sm-6 col-xs-12" key={data.id}>
