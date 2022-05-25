@@ -3,11 +3,23 @@ import React from "react";
 import { POST } from "../Api/api";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import validator from "validator";
 
 const Signin = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+
+  const validateEmail = (e) => {
+    var email = e.target.value;
+    setEmail(email);
+    if (validator.isEmail) {
+      setEmailError("Valid Email");
+    } else {
+      setEmailError("Enter valid Email!");
+    }
+  };
 
   const handleSignIn = async (e) => {
     try {
@@ -17,6 +29,7 @@ const Signin = () => {
       };
       let response = await POST("loginProfile", payload);
       console.log(response);
+
       if (response.status == 200 && response !== null) {
         const token = response.data.token;
         let isAdmin = response.data.userDetails.userType == 0 ? true : false;
@@ -48,7 +61,7 @@ const Signin = () => {
         type="text"
         placeholder="Enter email"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={validateEmail}
       />
       <input
         className="inputbox"
